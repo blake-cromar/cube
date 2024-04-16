@@ -1,8 +1,10 @@
 #include <iostream>
 using namespace std;
 
-int relu(int a) {
-    return (a > 0) ? a : 0;
+double relu(double x) {
+    return (x > 0.0) ? x : 0.0;
+}
+
 }
 
 int main() {
