@@ -29,11 +29,21 @@ double sigmoid(double x) {
     return 1.0 / (1.0 + exp_neg_x);
 }
 
-int main() {
-    
-    double result = sigmoid(-2);
+/**
+ * Compute the hyperbolic tangent of a given value.
+ *
+ * This function computes the hyperbolic tangent (tanh) of the input value.
+ * The hyperbolic tangent is a hyperbolic function defined as the ratio of
+ * the hyperbolic sine to the hyperbolic cosine.
+ *
+ * @param x The input value for which to compute the hyperbolic tangent.
+ * @return The hyperbolic tangent of the input value.
+ */
+double hyperbolic_tangent(double x) {
+    return std::tanh(x);
+}
 
-    cout << "The activation function produces the value of: " << result << endl;
+int main() {
 
     return 0;
 }
