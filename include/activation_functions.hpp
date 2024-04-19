@@ -112,8 +112,6 @@ double hyperbolic_tangent(double x);
  * double: 
  *      Output of the Leaky ReLU function for the given input 'x' and slope 'a'.
  */
-double leaky_relu(double x, double a) {
-    return x * (x > 0.0) + a * x * (x <= 0);
-}
+double leaky_relu(double x, double a);
 
 #endif 
