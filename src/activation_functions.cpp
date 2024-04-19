@@ -45,10 +45,12 @@ double sigmoid(double x) {
  * 3. Sensitive to the scale of the inputs, which may require normalization.
  *
  * Parameters:
- *   x (double): Input value to the activation function.
+ *   x : double 
+ *      Input value to the activation function.
  *
  * Returns:
- *   double: Output of the hyperbolic tangent function for the given input 'x'.
+ *   double: 
+ *      Output of the hyperbolic tangent function for the given input 'x'.
  */
 double hyperbolic_tangent(double x) {
     return std::tanh(x);
@@ -70,12 +72,17 @@ double hyperbolic_tangent(double x) {
  * 1. Requires manual tuning of the slope parameter 'a'.
  * 2. Potential for vanishing gradients, especially if 'a' is too small. 
  * 
- * Parameters:
- *   x (double): Input value to the activation function.
- *   a (double): Slope parameter for the negative region.
+ * Parameters
+ * ----------
+ *   x : double  
+ *      Input value to the activation function.
+ *   a : double 
+ *      Slope parameter for the negative region.
  *
- * Returns:
- *   double: Output of the Leaky ReLU function for the given input 'x' and slope 'a'.
+ * Returns
+ * -------
+ *   double: 
+ *      Output of the Leaky ReLU function for the given input 'x' and slope 'a'.
  */
 
 double leaky_relu(double x, double a) {
