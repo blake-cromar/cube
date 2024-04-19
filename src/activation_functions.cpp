@@ -30,14 +30,30 @@ double sigmoid(double x) {
 }
 
 /**
- * Compute the hyperbolic tangent of a given value.
+ * Computes the output of the hyperbolic tangent activation function.
  *
- * This function computes the hyperbolic tangent (tanh) of the input value.
- * The hyperbolic tangent is a hyperbolic function defined as the ratio of
- * the hyperbolic sine to the hyperbolic cosine.
+ * Hyperbolic tangent (tanh) is defined as follows:
+ *   f(x) = (exp(x) - exp(-x)) / (exp(x) + exp(-x))
  *
- * @param x The input value for which to compute the hyperbolic tangent.
- * @return The hyperbolic tangent of the input value.
+ * Positives of the function:
+ * 1. Smooth, bounded between -1 and 1.
+ * 2. Symmetrical around the origin.
+ * 3. Useful in recurrent neural networks (RNNs) due to its bounded output.
+ * 4. Encourages sparse activations, which can help in regularization.
+ * 5. Compatible with gradient descent optimization algorithms.
+ *
+ * Negatives of this function:
+ * 1. Prone to vanishing gradients, especially for large inputs.
+ * 2. Not zero-centered, which might hinder optimization.
+ * 3. Susceptible to saturation, leading to gradient saturation and slow learning.
+ * 4. Computationally expensive compared to other activation functions.
+ * 5. Sensitive to the scale of the inputs, which may require normalization.
+ *
+ * Parameters:
+ *   x (double): Input value to the activation function.
+ *
+ * Returns:
+ *   double: Output of the hyperbolic tangent function for the given input 'x'.
  */
 double hyperbolic_tangent(double x) {
     return std::tanh(x);
