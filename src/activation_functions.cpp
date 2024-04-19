@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <stdexcept>
 #include "../include/activation_functions.hpp"
 using namespace std;
 
@@ -119,5 +120,10 @@ double hyperbolic_tangent(double x) {
  *      Output of the Leaky ReLU function for the given input 'x' and slope 'a'.
  */
 double leaky_relu(double x, double a) {
+    // 'a' must be greater than zero.
+    if(a <= 0) {
+        throw std::invalid_argument("Parameter 'a' must be greater than zero.");
+    }
+    
     return x * (x > 0.0) + a * x * (x <= 0);
 }
