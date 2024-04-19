@@ -13,7 +13,7 @@ using namespace std;
  * @return The output value after applying the ReLU function.
  */
 double relu(double x) {
-    return (x > 0.0) ? x : 0.0;
+    return x * (x > 0.0);
 }
 
 /**
@@ -37,17 +37,12 @@ double sigmoid(double x) {
  *
  * Positives of the function:
  * 1. Smooth, bounded between -1 and 1.
- * 2. Symmetrical around the origin.
- * 3. Useful in recurrent neural networks (RNNs) due to its bounded output.
- * 4. Encourages sparse activations, which can help in regularization.
- * 5. Compatible with gradient descent optimization algorithms.
+ * 2. Encourages sparse activations, which can help in regularization.
  *
  * Negatives of this function:
  * 1. Prone to vanishing gradients, especially for large inputs.
- * 2. Not zero-centered, which might hinder optimization.
- * 3. Susceptible to saturation, leading to gradient saturation and slow learning.
- * 4. Computationally expensive compared to other activation functions.
- * 5. Sensitive to the scale of the inputs, which may require normalization.
+ * 2. Computationally expensive compared to other activation functions.
+ * 3. Sensitive to the scale of the inputs, which may require normalization.
  *
  * Parameters:
  *   x (double): Input value to the activation function.
