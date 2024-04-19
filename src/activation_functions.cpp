@@ -4,26 +4,58 @@
 using namespace std;
 
 /**
- * Computes the Rectified Linear Unit (ReLU) function for a given input.
+ * Computes the output of the ReLU (Rectified Linear Unit) activation function.
  *
- * ReLU is a non-linear activation function commonly used in neural networks.
- * It returns the input value if it is greater than 0, otherwise, it returns 0.
+ * The ReLU function is defined as follows:
+ *   f(x) = x * (x > 0)
  *
- * @param x: The input value.
- * @return The output value after applying the ReLU function.
+ * Positives of the function:
+ * - Simple and computationally efficient.
+ * - Allows for sparse activations, reducing overfitting.
+ *
+ * Negatives of this function:
+ * - Prone to dying ReLU problem for negative inputs, where neurons become inactive.
+ * - Not zero-centered, which can lead to optimization difficulties.
+ * - Not suitable for networks with many layers due to the dying ReLU problem.
+ *
+ * Parameters
+ * ----------
+ * x : double 
+ *      Input value to the activation function.
+ *
+ * Returns
+ * -------
+ * double: 
+ *      Output of the ReLU function for the given input 'x'.
  */
 double relu(double x) {
     return x * (x > 0.0);
 }
 
 /**
- * Compute the Sigmoid function for a given input.
+ * Computes the output of the sigmoid activation function.
  *
- * The Sigmoid function is a non-linear activation function commonly used in neural networks.
- * It squashes the input values between 0 and 1, which can be interpreted as probabilities.
+ * The sigmoid function is defined as follows:
+ *   f(x) = 1 / (1 + exp(-x))
  *
- * @param x: The input value.
- * @return The output value after applying the Sigmoid function.
+ * Positives of the function:
+ * - Smooth, bounded between 0 and 1.
+ * - Useful for binary classification problems.
+ *
+ * Negatives of this function:
+ * - Prone to vanishing gradients, especially for extreme inputs.
+ * - Outputs are not zero-centered, which can slow down convergence.
+ * - Not suitable for networks with many layers due to vanishing gradient problem.
+ *
+ * Parameters
+ * ----------
+ * x : double 
+ *      Input value to the activation function.
+ *
+ * Returns
+ * -------
+ * double: 
+ *      Output of the sigmoid function for the given input 'x'.
  */
 double sigmoid(double x) {
     return 1.0 / (1.0 + exp(-x));
@@ -36,20 +68,22 @@ double sigmoid(double x) {
  *   f(x) = (exp(x) - exp(-x)) / (exp(x) + exp(-x))
  *
  * Positives of the function:
- * 1. Smooth, bounded between -1 and 1.
- * 2. Encourages sparse activations, which can help in regularization.
+ * - Smooth, bounded between -1 and 1.
+ * - Encourages sparse activations, which can help in regularization.
  *
  * Negatives of this function:
- * 1. Prone to vanishing gradients, especially for large inputs.
- * 2. Computationally expensive compared to other activation functions.
- * 3. Sensitive to the scale of the inputs, which may require normalization.
+ * - Prone to vanishing gradients, especially for large inputs.
+ * - Computationally expensive compared to other activation functions.
+ * - Sensitive to the scale of the inputs, which may require normalization.
  *
- * Parameters:
- *   x : double 
+ * Parameters
+ * ----------
+ * x : double 
  *      Input value to the activation function.
  *
- * Returns:
- *   double: 
+ * Returns
+ * -------
+ * double: 
  *      Output of the hyperbolic tangent function for the given input 'x'.
  */
 double hyperbolic_tangent(double x) {
@@ -74,17 +108,16 @@ double hyperbolic_tangent(double x) {
  * 
  * Parameters
  * ----------
- *   x : double  
+ * x : double  
  *      Input value to the activation function.
- *   a : double 
+ * a : double 
  *      Slope parameter for the negative region.
  *
  * Returns
  * -------
- *   double: 
+ * double: 
  *      Output of the Leaky ReLU function for the given input 'x' and slope 'a'.
  */
-
 double leaky_relu(double x, double a) {
     return x * (x > 0.0) + a * x * (x <= 0);
 }
