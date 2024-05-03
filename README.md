@@ -10,7 +10,7 @@ Cube is an AI and mathematical computational engine. The goal of this project is
 - [Planned&nbsp;Features](#planned-features)
 - [Contributing](#contributing)
 - [Contact](#contact)
-- [license](#license)
+- [License](#license)
 
 ## Installation
 (Will be updated later when there is usable code.)
