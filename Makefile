@@ -7,7 +7,7 @@ INCDIR := include
 OBJDIR := obj
 
 SOURCES := $(wildcard $(SRCDIR)/*.cpp)
-HEADERS := $(wildcard $(INCDIR)/*.h)
+HEADERS := $(wildcard $(INCDIR)/*.hpp)
 OBJECTS := $(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SOURCES))
 
 .PHONY: all clean
