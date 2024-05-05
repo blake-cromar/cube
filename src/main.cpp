@@ -1,5 +1,5 @@
 #include <iostream>
-#include "include/activation_functions.hpp"
+#include "../include/activation_functions.hpp"
 using namespace std;
 
 int main () {
