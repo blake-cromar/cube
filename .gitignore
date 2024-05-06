@@ -3,3 +3,4 @@
 *.json
 obj
 cube
+.DS_Store
