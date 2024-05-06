@@ -1,10 +1,8 @@
 #include <iostream>
-using namespace std;
-
 #include "../include/test_activation_functions.hpp"
+using namespace std;
 
 int main() {
     test_relu_function();
-    cout << "Hello, world" << endl;
     return 0;
 }
