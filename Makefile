@@ -1,4 +1,4 @@
-CC := clang++
+CC := g++
 CFLAGS := -Wall -Wextra -Iinclude -std=c++11
 LDFLAGS :=
 TARGET := cube
